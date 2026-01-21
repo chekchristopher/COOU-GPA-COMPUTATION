@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COOU GPA COMPUTATION SYSTEM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/images (11).jpeg">
+    <style>
+        .section2 {
+            margin: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+        }
+
+        .section2 h2 {
+            padding: 20px;
+            text-align: center;
+            color: var(--primary);
+            animation: blink 1s infinite;
+        }
+
+        .section2 h3 {
+            color: var(--secondary);
+        }
+
+        .section2 .container {
+            background-color: var(--light);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            padding: 10px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .section2 b {
+            color: var(--secondary);
+        }
+
+        @keyframes blink {
+            0% {
+                color: var(--primary);
+            }
+            25% {
+                color: var(--secondary);
+            }
+            70% {
+                color: var(--transparent);
+            }
+            100% {
+                color: var(--dark);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="headerimg">
+                <img src="images/images (2).png">
+            </div>
+            <div class="navlink">
+                <a href="https://portal.coou.edu.ng" target="_blank">Go to portal</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section1">
+        <div class="section1A">
+            <h2>GPA COMPUTATION</h2>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- Summary Cards -->
+        <div class="summary">
+            <div>Total Subjects: <span id="totalSubjects">0</span></div>
+            <div>Total Credits: <span id="totalCredits">0</span></div>
+            <div>Current GPA: <span id="currentGpa">0.00</span></div>
+        </div>
+
+        <!-- Course Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Course</th>
+                    <th>Credit Unit</th>
+                    <th>Grade</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="courseTable">
+                <tr class="grade-row">
+                    <td><input class="course" type="text"></td>
+                    <td><input class="credit" type="number"></td>
+                    <td>
+                        <select class="grade">
+                            <option value="">-</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                            <option>F</option>
+                        </select>
+                    </td>
+                    <td><button class="delete">✕</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="addRowBtn" class="add-btn">+ Add Course</button>
+
+
+        <!-- Actions -->
+        <button id="calculateBtn">Calculate GPA</button>
+
+        <!-- Result -->
+        <div class="result">
+            <h2>GPA: <span id="calculatedGpa">0.00</span></h2>
+            <p id="gradeStanding">—</p>
+        </div>
+    </div>
+
+    <div class="section2">
+        <br>
+        <h2>Instructions</h2>
+        <div class="container">
+            <h3>💨To Calculate GPA (One Semester)</h3><br> 
+            <p>💢Enter each name.</p>
+            <p>💢Input the credit unit for the course.</p>
+            <p>💢Select the grade earned <b>(A-F)</b>.</p>
+            <p>💢Click <b>+ Add Course</b> to add more course.</p>
+            <p>💢After entering all courses for the semester, click <b>Calculate GPA</b>.</p>
+            <p>💢Your <b>GPA</b> will be displayed instantly.</p>
+            
+        </div>
+        <br>
+        <div class="container">
+            <h3>💨To Calculate CGPA (Multiple Semester)</h3><br>
+            <p>💢Enter all courses taken so far (from previous and current semesters).</p>
+            <p>💢Use the correct <b>credit unit</b> and <b>grade</b> for each course.</p>
+            <p>💢Add every course using <b>+ Add Course.</b></p>
+            <p>💢Click <b>Calculate GPA</b>.</p>
+            <p>💢The result shown is your <b>CGPA</b>.</p>
+        </div>
+    </div>
+
+ <script src="gpa.js"></script>
+</body>
+</html>
